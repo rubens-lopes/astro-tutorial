@@ -2,10 +2,15 @@
 import BaseLayout from "./BaseLayout.astro";
 
 const { frontmatter } = Astro.props
+const pubDate = Intl.DateTimeFormat(`pt-BR`).format(new Date(frontmatter.pubDate)) 
 ---
 
 <BaseLayout pageTitle={frontmatter.title}>
   <button slot="before-heading" onclick="history.back()">⇐ back</button>
+
+  <p>Published on: {pubDate}</p>
+  <p>Written by {frontmatter.author}</p>
+
   <slot />
 </BaseLayout>
 
