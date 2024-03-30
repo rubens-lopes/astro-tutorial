@@ -2,24 +2,8 @@
 const { page } = Astro.props
 ---
 
-<style>
-  a {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-weight: 600;
-    color: orange;
-    opacity: .8;
-  }
-
-  a:hover {
-    opacity: 1;
-  }
-
-  a.active {
-    opacity: 1;
-    text-decoration: none;
-  }
-</style>
-
-<a class={page === `home` ? `active` : ``} href="/">Home</a>
-<a class={page === `about` ? `active` : ``} href="/about/">About</a>
-<a class={page === `blog` ? `active` : ``} href="/blog/">Blog</a>
+<div class="nav-links">
+  <a class={page === `home` ? `active` : ``} href="/">Home</a>
+  <a class={page === `about` ? `active` : ``} href="/about/">About</a>
+  <a class={page === `blog` ? `active` : ``} href="/blog/">Blog</a>
+</div>
