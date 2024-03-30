@@ -10,9 +10,13 @@ const { page } = Astro.props
     opacity: .8;
   }
 
-  a.active,
   a:hover {
     opacity: 1;
+  }
+
+  a.active {
+    opacity: 1;
+    text-decoration: none;
   }
 </style>
 
