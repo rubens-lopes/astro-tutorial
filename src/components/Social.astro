@@ -1,0 +1,14 @@
+---
+const { platform, username } = Astro.props;
+const partialUrl = platform === `LinkedIn` ? `in/` : ``
+---
+
+<a href={`https://www.${platform}.com/${partialUrl}${username}`}>{platform}</a>
+
+<style>
+  a {
+    padding: .5rem 1rem;
+    color: white;
+    background-color: #4c1d95;
+  }
+</style>
