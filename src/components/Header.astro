@@ -1,11 +1,17 @@
 ---
 import Navigation from "./Navigation.astro"
+import Hamburger from "./Hamburger.astro"
 
 const { page } = Astro.props
 ---
 
 <header>
   <nav>
+    <Hamburger />
     <Navigation {page} />
   </nav>
 </header>
+
+<script>
+  import '../scripts/menu.js'
+</script>

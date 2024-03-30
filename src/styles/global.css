@@ -24,6 +24,19 @@ a:visited {
   color: inherit;
 }
 
+.hamburger {
+  padding-right: 20px;
+  cursor: pointer;
+}
+
+.hamburger .line {
+  display: block;
+  width: 40px;
+  height: 5px;
+  margin-bottom: 10px;
+  background-color: #ff9776;
+}
+
 .nav-links {
   width: 100%;
   top: 5rem;
@@ -36,7 +49,6 @@ a:visited {
   text-align: center;
   padding: 10px 0;
   font-size: 1.2rem;
-  font-weight: bold;
   text-transform: uppercase;
 }
 
@@ -46,8 +58,12 @@ a:visited {
   background-color: #ff9776;
 }
 
+.nav-links a.active {
+  font-weight: bold;
+}
+
 .expanded {
-  display: unset;
+  display: none;
 }
 
 @media screen And (min-width: 636px) {
@@ -62,5 +78,9 @@ a:visited {
   .nav-links a {
     display: inline-block;
     padding: 15px 20px;
+  }
+
+  .hamburger {
+    display: none;
   }
 }
