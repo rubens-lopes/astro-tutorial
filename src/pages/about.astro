@@ -1,4 +1,5 @@
 ---
+import Menu from '../components/menu.astro'
 const pageTitle = `About Me`
 const identity = {
 	firstName: `Rubens`,
@@ -19,9 +20,7 @@ const skills = [ `HTML`, `CSS`, `JavaScript`, `Svelte`, `VueJs`, `C#`, `Docker`,
 		<title>{pageTitle}</title>
 	</head>
 	<body>
-		<a href="/">Home</a>
-		<a href="/about/">About</a>
-		<a href="/blog/">Blog</a>
+		<Menu />
 		<h1>{pageTitle}</h1>
 		<h2>... and my new Astro site!</h2>
 

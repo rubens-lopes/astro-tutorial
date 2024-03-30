@@ -1,5 +1,6 @@
 ---
 const pageTitle = `My Astro Learning Blog`
+import Menu from '../components/menu.astro'
 ---
 
 <html lang="en">
@@ -11,9 +12,7 @@ const pageTitle = `My Astro Learning Blog`
 		<title>{pageTitle}</title>
 	</head>
 	<body>
-		<a href="/">Home</a>
-		<a href="/about/">About</a>
-		<a href="/blog/">Blog</a>
+		<Menu />
 		<h1>{pageTitle}</h1>
 		<p>This is where I will post about my journey learning Astro.</p>
     <ul>
