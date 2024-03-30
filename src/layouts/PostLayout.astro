@@ -9,14 +9,25 @@ const pubDate = Intl.DateTimeFormat(`pt-BR`).format(new Date(frontmatter.pubDate
   <button slot="before-heading" onclick="history.back()">⇐ back</button>
 
   <p>Published on: {pubDate}</p>
+  <p><em>{frontmatter.description}</em></p>
   <p>Written by {frontmatter.author}</p>
+  <img src={frontmatter.image.url} alt={frontmatter.image.alt} width="300">
 
   <slot />
+
+  {frontmatter.tags.map((tag) => <span class="tag">#{tag}</span>)}
 </BaseLayout>
 
 <style>
   button {
     background: none;
     border: none;
+  }
+
+  .tag {
+    display: inline-block;
+    margin-left: .5rem;
+    padding: .25rem;
+    background-color: violet;
   }
 </style>
