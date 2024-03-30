@@ -9,6 +9,10 @@ const identity = {
 }
 
 const skills = [ `HTML`, `CSS`, `JavaScript`, `Svelte`, `VueJs`, `C#`, `Docker`, `Automated testing` ]
+
+const skillColor = `navy`
+const fontWeight = `bold`
+const textCase = `initial`
 ---
 
 <html lang="en">
@@ -18,9 +22,21 @@ const skills = [ `HTML`, `CSS`, `JavaScript`, `Svelte`, `VueJs`, `C#`, `Docker`,
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{pageTitle}</title>
+		<style define:vars={{skillColor, fontWeight, textCase}}>
+			h1 {
+				color: purple;
+				font-size: 4rem;
+			}
+			
+			.skill {
+				color: var(--skillColor);
+				font-weight: var(--fontWeight);
+				text-transform: var(--textCase);
+			}
+		</style>
 	</head>
 	<body>
-		<Menu />
+		<Menu page="about" />
 		<h1>{pageTitle}</h1>
 		<h2>... and my new Astro site!</h2>
 
@@ -37,6 +53,6 @@ const skills = [ `HTML`, `CSS`, `JavaScript`, `Svelte`, `VueJs`, `C#`, `Docker`,
 			}
 		</ul>
 		<p>My skills are:</p>
-		<ul>{skills.map((skill) => <li>{skill}</li>)}</ul>
+		<ul>{skills.map((skill) => <li class="skill">{skill}</li>)}</ul>
 	</body>
 </html>
