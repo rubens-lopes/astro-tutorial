@@ -1,0 +1,17 @@
+---
+import BaseLayout from "./BaseLayout.astro";
+
+const { frontmatter } = Astro.props
+---
+
+<BaseLayout pageTitle={frontmatter.title}>
+  <button slot="before-heading" onclick="history.back()">⇐ back</button>
+  <slot />
+</BaseLayout>
+
+<style>
+  button {
+    background: none;
+    border: none;
+  }
+</style>
