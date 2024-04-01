@@ -1,5 +1,5 @@
 ---
-layout: ../../layouts/PostLayout.astro
+layout: ./PostLayout.astro
 title: 'Some code same'
 pubDate: 2024-04-30T04:00:00.000Z
 description: 'Trying code snippets on my new Astro blog.'

@@ -1,5 +1,5 @@
 ---
-import BaseLayout from "./BaseLayout.astro";
+import BaseLayout from "$layouts/BaseLayout.astro";
 
 const { frontmatter } = Astro.props
 const pubDate = Intl.DateTimeFormat(`pt-BR`).format(new Date(frontmatter.pubDate)) 
