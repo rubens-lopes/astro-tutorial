@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '$layouts/BaseLayout.astro'
 import orderBy from 'lodash/orderBy'
+import Tag from '$components/Tag.astro'
 
 const posts = await Astro.glob(`../posts/*.md`)
 const tags = [... new Set(posts.map((post) => post.frontmatter.tags).flat())]
@@ -8,27 +9,15 @@ const tags = [... new Set(posts.map((post) => post.frontmatter.tags).flat())]
 
 <BaseLayout pageTitle="Tag Index" page="tags">
   <ul>
-    {orderBy(tags).map((tag) => <li><a href={`/tags/${tag}`}>{tag}</a></li>)}
+    {orderBy(tags).map((tag) => <Tag {tag} />)}
   </ul>
 </BaseLayout>
 
 <style>
-  a {
-    color: #00539F;
-  }
-
   ul {
     list-style: none;
     display: flex;
+    padding: 0;
     flex-wrap: wrap;
-  }
-
-  li {
-    margin: 0.25em;
-    border: dotted 1px #a1a1a1;
-    border-radius: .5em;
-    padding: .5em 1em;
-    font-size: 1.15em;
-    background-color: #F8FCFD;
   }
 </style>

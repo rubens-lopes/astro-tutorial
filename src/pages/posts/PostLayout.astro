@@ -1,5 +1,7 @@
 ---
 import BaseLayout from "$layouts/BaseLayout.astro";
+import Tag from "$components/Tag.astro";
+import orderBy from 'lodash/orderBy'
 
 const { frontmatter } = Astro.props
 const pubDate = Intl.DateTimeFormat(`pt-BR`).format(new Date(frontmatter.pubDate)) 
@@ -15,7 +17,9 @@ const pubDate = Intl.DateTimeFormat(`pt-BR`).format(new Date(frontmatter.pubDate
 
   <slot />
 
-  {frontmatter.tags.map((tag) => <span class="tag">#{tag}</span>)}
+  <ul>
+    {orderBy(frontmatter.tags).map((tag) => <Tag {tag} />)}
+  </ul>
 </BaseLayout>
 
 <style>
@@ -24,10 +28,10 @@ const pubDate = Intl.DateTimeFormat(`pt-BR`).format(new Date(frontmatter.pubDate
     border: none;
   }
 
-  .tag {
-    display: inline-block;
-    margin-left: .5rem;
-    padding: .25rem;
-    background-color: violet;
+  ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
   }
 </style>
