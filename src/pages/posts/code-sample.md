@@ -7,7 +7,7 @@ author: 'Astro Learner'
 image:
   url: 'https://duckduckgo.com/i/4f6a9643.png'
   alt: 'C# logo.'
-tags: ["dotnet", "c#", "learning in public"]
+tags: ["dotnet", "csharp", "learning in public"]
 ---
 
 ```csharp
