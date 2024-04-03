@@ -1,5 +1,5 @@
 ---
-layout: ./PostLayout.astro
+layout: ./_PostLayout.astro
 title: My Second Blog Post
 author: Astro Learner
 description: "After lerning some Astro, I couldn't stop!"
