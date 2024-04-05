@@ -2,14 +2,19 @@
 import BaseLayout from "$layouts/BaseLayout.astro"
 import orderBy from "lodash/orderBy"
 import BlogPost from "$components/BlogPost.astro"
+import { getCollection } from "astro:content"
 
 const pageTitle = `My Astro Learning Blog`;
-const posts = orderBy(await Astro.glob(`./posts/*.md`), `frontmatter.pubDate`)
+const posts = orderBy(await getCollection(`posts`), `frontmatter.pubDate`)
 ---
 
 <BaseLayout {pageTitle} page="blog">
 	<p>This is where I will post about my journey learning Astro.</p>
 	<ul>
-		{posts.map((post) => <BlogPost url={post.url} title={post.frontmatter.title} />)}
+		{
+			posts.map((post) => (
+				<BlogPost url={`/posts/${post.slug}`} title={post.data.title} />
+			))
+		}
 	</ul>
 </BaseLayout>
