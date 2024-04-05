@@ -1,6 +1,7 @@
 ---
 import Navigation from "./Navigation.astro"
 import Hamburger from "./Hamburger.astro"
+import ThemeIcon from "./ThemeIcon.astro"
 
 const { page } = Astro.props
 ---
@@ -8,6 +9,7 @@ const { page } = Astro.props
 <header>
   <nav>
     <Hamburger />
+    <ThemeIcon />
     <Navigation {page} />
   </nav>
 </header>
